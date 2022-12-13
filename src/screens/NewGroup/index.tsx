@@ -15,12 +15,8 @@ export function NewGroup(){
     const [Group, setGroup] = useState("")
 
     async function handleCreateNewGroup() {
-       try{
-            await CreateGroup(Group)
-            navigation.navigate('players', { group: Group })
-       }catch(error){
-            console.log(error)
-       }
+        await CreateGroup(Group)
+        navigation.navigate('players', { group: Group })
     }
 
     return(

@@ -8,9 +8,11 @@ type Headerprops = {
 
 export function Header({ showBackButton = false }: Headerprops){
     const navigation = useNavigation()
+    
     function handleGoBack(){
         navigation.navigate('groups')
     }
+
     return(
         <Container>
             {showBackButton && 

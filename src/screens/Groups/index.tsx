@@ -19,12 +19,8 @@ export function Groups(){
     }
 
     async function FetchGroups(){
-        try{
-            const data = await GroupGetAll()
-            setGroups(data)
-        }catch(error){
-            console.log(error)
-        }
+        const data = await GroupGetAll()
+        setGroups(data)
     }
 
     function handleOpenGroup(group: string){
@@ -33,7 +29,7 @@ export function Groups(){
 
     useFocusEffect(useCallback(() => {
         FetchGroups()
-    }, []))
+    }, [Groups]))
 
     return(
         <S.Container>

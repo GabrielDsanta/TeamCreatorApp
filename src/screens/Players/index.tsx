@@ -39,23 +39,14 @@ export function Players(){
         setPlayerTextName("")
     }
 
-    async function GetPlayersByTeam(){
-        try{
-            const playersByTeam = await GetPlayersByGroupAndTeam(group, Team)
-            setPlayers(playersByTeam)
-
-        }catch(error){
-            throw error
-        }
+    async function GetPlayersByTeam(){ 
+        const playersByTeam = await GetPlayersByGroupAndTeam(group, Team)
+        setPlayers(playersByTeam)
     }
 
     async function handleRemovePlayer(name: string){
-        try{
-            await RemovePlayerByGroup(name, group)
-            GetPlayersByTeam()
-        }catch(error){
-            throw error
-        }
+        await RemovePlayerByGroup(name, group)
+        GetPlayersByTeam()
     }
 
     async function handleRemoveGroup(){
